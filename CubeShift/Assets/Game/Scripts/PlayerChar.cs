@@ -26,6 +26,11 @@ public class PlayerChar : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag == "Finish")
+        {
+            gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            print("You reached the finish line");
+        }
         if(other.gameObject.tag == "enemy") 
         {
             Respawn();
