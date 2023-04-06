@@ -37,7 +37,7 @@ public class PlayerChar : MonoBehaviour
         }
         else if (other.gameObject.tag == "TeenyPill")
         {
-            gameObject.transform.localScale = new Vector3(2,2,2);
+            gameObject.transform.localScale = new Vector3(.1f,.1f,.1f);
             other.gameObject.SetActive(false);
         }
         else if(other.gameObject.tag == "goldGate") 
