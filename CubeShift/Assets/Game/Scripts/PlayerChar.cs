@@ -31,9 +31,13 @@ public class PlayerChar : MonoBehaviour
             gameObject.GetComponent<Rigidbody>().isKinematic = true;
             print("You reached the finish line");
         }
-        if(other.gameObject.tag == "enemy") 
+        else if(other.gameObject.tag == "enemy") 
         {
             Respawn();
+        }
+        else if (other.gameObject.tag == "TeenyPill")
+        {
+            gameObject.transform.localScale = new Vector3(2,2,2);
         }
         else if(other.gameObject.tag == "goldGate") 
         {

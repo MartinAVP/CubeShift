@@ -24,6 +24,12 @@ public class FloatingPlatformMove : MonoBehaviour
         Move();
     }
 
+    private void checkPoints()
+    {
+
+    }
+
+
     //Make the platform move from one place to the other
     private void Move()
     {
