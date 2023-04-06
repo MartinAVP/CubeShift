@@ -13,9 +13,14 @@ public class PlayerMovement : MonoBehaviour
 
     private float rotation = 45f;
     private bool keyPaused;
-    private bool isSnapped;
+    private bool isSnapped = false;
     private float myAngle;
+    private Vector3 spawnPoint;
 
+    private void Start()
+    {
+        spawnPoint = transform.position;
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -137,5 +142,10 @@ public class PlayerMovement : MonoBehaviour
         {
             print("no angle found");
         }
+    }
+
+    private void Respawn()
+    {
+        gameObject.transform.position = spawnPoint;
     }
 }
