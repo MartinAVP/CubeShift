@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//Constantly get the rotation of the Main Level
+//Add the rotation angle to the platform
+// Move it along that fake axis.
+
 public class FloatingPlatformMove : MonoBehaviour
 {
     public GameObject leftPoint;
