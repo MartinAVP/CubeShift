@@ -8,6 +8,9 @@ TagManager:
   - goldKey
   - goldGate
   - TeenyPill
+  - platformRight
+  - platformLeft
+  - platform
   layers:
   - Default
   - TransparentFX
