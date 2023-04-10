@@ -98,7 +98,7 @@ public class FloatingPlatformMove : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             //print("player in range stayed");
-            other.transform.position = Vector3.MoveTowards(other.transform.position, transform.position, 1.3f * speed * Time.deltaTime);
+            //other.transform.position = Vector3.MoveTowards(other.transform.position, transform.position, 1.3f * speed * Time.deltaTime);
         }
     }
 
