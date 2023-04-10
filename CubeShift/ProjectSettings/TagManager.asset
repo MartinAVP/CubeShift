@@ -11,6 +11,7 @@ TagManager:
   - platformRight
   - platformLeft
   - platform
+  - Cannon
   layers:
   - Default
   - TransparentFX
