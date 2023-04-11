@@ -6,6 +6,7 @@ public class PlayerChar : MonoBehaviour
 {
 
     private Vector3 spawnPoint;
+    public GameObject mainLevel;
     public int goldenKey;
     // Start is called before the first frame update
     void Start()
@@ -19,9 +20,17 @@ public class PlayerChar : MonoBehaviour
         
     }
 
+    private IEnumerator deathDelay()
+    {
+        yield return new WaitForSeconds(.8f);
+        mainLevel.GetComponent<PlayerMovement>().Respawn();
+    }
+
     private void Respawn()
     {
-        gameObject.transform.position = spawnPoint;
+        transform.position = spawnPoint;
+        mainLevel.GetComponent<UIController>().Death();
+        StartCoroutine("deathDelay");
     }
 
     private void OnTriggerEnter(Collider other)

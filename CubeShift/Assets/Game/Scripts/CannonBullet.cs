@@ -15,6 +15,9 @@ public class CannonBullet : MonoBehaviour
         cannon = GameObject.FindGameObjectWithTag("Cannon");
         bulletGrp = GameObject.Find("Bullets");
         //transform.parent = bulletGrp.transform;
+
+        player = GameObject.FindGameObjectWithTag("Player");
+        gameObject.transform.GetComponent<Rigidbody>().AddForce((player.transform.position - transform.position) * 50f);
     }
 
     private IEnumerator lifetime()
@@ -26,7 +29,6 @@ public class CannonBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        gameObject.transform.GetComponent<Rigidbody>().AddForce((player.transform.position - transform.position) * .5f);
+
     }
 }
