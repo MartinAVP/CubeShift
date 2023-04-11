@@ -36,7 +36,6 @@ public class FloatingPlatformMove : MonoBehaviour
         {
             if (gameObject.transform.position == leftPoint.transform.position)
             {
-                print("toco el punto izquierdo");
                 goingLeft = true;
             }
             else
@@ -48,7 +47,6 @@ public class FloatingPlatformMove : MonoBehaviour
         {
             if (gameObject.transform.position == rightPoint.transform.position)
             {
-                print("toco el punto derecho");
                 goingLeft = false;
             }
             else

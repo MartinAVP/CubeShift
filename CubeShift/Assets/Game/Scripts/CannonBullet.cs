@@ -6,13 +6,15 @@ using static UnityEngine.GraphicsBuffer;
 public class CannonBullet : MonoBehaviour
 {
     public GameObject cannon;
+    public GameObject bulletGrp;
     private GameObject player;
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(lifetime());
         cannon = GameObject.FindGameObjectWithTag("Cannon");
-        transform.parent = cannon.transform;
+        bulletGrp = GameObject.Find("Bullets");
+        //transform.parent = bulletGrp.transform;
     }
 
     private IEnumerator lifetime()
@@ -25,6 +27,6 @@ public class CannonBullet : MonoBehaviour
     void Update()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        gameObject.transform.GetComponent<Rigidbody>().AddForce((player.transform.position - transform.position) * 1);
+        gameObject.transform.GetComponent<Rigidbody>().AddForce((player.transform.position - transform.position) * .5f);
     }
 }
