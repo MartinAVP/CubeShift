@@ -1149,7 +1149,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   introduction: {fileID: 2040282420}
-  levelNumber: 1
+  LevelN: 1
+  deathMessage: {fileID: 1944153265}
+  levelNumber: {fileID: 1018027343}
+  levelDesc: {fileID: 1985583479}
   levelDescription: An Epic Description
 --- !u!1 &452733169
 GameObject:
@@ -1512,7 +1515,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 213
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 214
@@ -3569,7 +3572,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &2040282424
 RectTransform:
@@ -3604,7 +3607,7 @@ Animator:
   m_GameObject: {fileID: 2040282420}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4ea574ddf94d6fa42b07cbf0c3634913, type: 2}
+  m_Controller: {fileID: 9100000, guid: 45b34a3085f1b564aa62a6ecb214e576, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
