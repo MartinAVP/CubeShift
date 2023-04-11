@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 10f;
     public Rigidbody rb;
     public Text degrees;
+    public GameObject UICon;
 
     private float rotation = 45f;
     private bool keyPaused;
@@ -144,8 +145,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void Respawn()
+    public void Respawn()
     {
         gameObject.transform.position = spawnPoint;
+        transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 }
