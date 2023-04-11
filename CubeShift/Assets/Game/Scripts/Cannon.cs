@@ -17,7 +17,6 @@ public class Cannon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         transform.LookAt(player.transform.position);
     }
 
