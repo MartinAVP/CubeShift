@@ -5,21 +5,25 @@ using UnityEngine;
 public class BulletSpawner : MonoBehaviour
 {
     public GameObject bullet_prefab;
-    private GameObject player;
+    public GameObject player;
+    public int estado;
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("shoot", 0f, .01f);
+        InvokeRepeating("shoot", 0f, .3f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(player.transform.position);
+        estado = gameObject.GetComponentInParent<TurretMain>().state;
     }
     private void shoot()
     {
-        Instantiate(bullet_prefab, GetComponent<Transform>().position,
-            GetComponent<Transform>().rotation); // Attached to pos and rot
+        if(estado == 1)
+        {
+            Instantiate(bullet_prefab, GetComponent<Transform>().position,
+                GetComponent<Transform>().rotation); // Attached to pos and rot
+        }
     }
 }

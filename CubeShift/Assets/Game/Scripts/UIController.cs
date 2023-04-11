@@ -12,6 +12,8 @@ public class UIController : MonoBehaviour
     public Text levelDesc;
     public string levelDescription;
     private Animator animatore;
+
+    public int deathMsgId;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,9 +29,33 @@ public class UIController : MonoBehaviour
         print("UI Death");
         levelNumber.text = " ";
         deathMessage.text = "You Died";
-        levelDesc.text = "do better.";
+        RandomDeath();
         animatore.SetTrigger("ScreenIn");
         animatore.SetTrigger("ScreenOut");
+    }
+
+    private void RandomDeath()
+    {
+        deathMsgId = Random.Range(1, 6);
+        switch (deathMsgId)
+        {
+            case 1:
+                levelDesc.text = "do better.";
+                break;
+            case 2:
+                levelDesc.text = "Is that the best you can do?";
+                break;
+            case 3:
+                levelDesc.text = "Try not dying";
+                break;
+            case 4:
+                levelDesc.text = "Is this really a hard game?";
+                break;
+            case 5:
+                levelDesc.text = "Wow...";
+                break;
+
+        }
     }
 
     // Update is called once per frame

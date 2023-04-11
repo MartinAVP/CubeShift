@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        gameObject.transform.GetComponent<Rigidbody>().AddForce((player.transform.position - transform.position) * 50f);
+        gameObject.transform.GetComponent<Rigidbody>().AddForce((player.transform.position - transform.position) * 80f);
         StartCoroutine(lifetime());
     }
     private IEnumerator lifetime()

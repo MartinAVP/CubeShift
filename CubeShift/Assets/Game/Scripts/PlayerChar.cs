@@ -24,11 +24,11 @@ public class PlayerChar : MonoBehaviour
     {
         yield return new WaitForSeconds(.8f);
         mainLevel.GetComponent<PlayerMovement>().Respawn();
+        transform.position = spawnPoint;
     }
 
     private void Respawn()
     {
-        transform.position = spawnPoint;
         mainLevel.GetComponent<UIController>().Death();
         StartCoroutine("deathDelay");
     }
