@@ -1510,7 +1510,7 @@ MonoBehaviour:
   deathMessage: {fileID: 1711699158}
   levelNumber: {fileID: 1692798649}
   levelDesc: {fileID: 1361850103}
-  levelDescription: 
+  levelDescription: Easy enough
 --- !u!1 &452733169
 GameObject:
   m_ObjectHideFlags: 0
