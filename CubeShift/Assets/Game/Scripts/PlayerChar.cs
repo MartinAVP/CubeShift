@@ -25,6 +25,9 @@ public class PlayerChar : MonoBehaviour
         yield return new WaitForSeconds(.8f);
         mainLevel.GetComponent<PlayerMovement>().Respawn();
         transform.position = spawnPoint;
+        //gameObject.transform.localScale = new Vector3(1, 1, 1);
+        gameObject.transform.localScale *= 1f;
+
     }
 
     private void Respawn()
