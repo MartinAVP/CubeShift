@@ -1391,6 +1391,7 @@ MonoBehaviour:
   speed: 10
   rb: {fileID: 1729506261}
   degrees: {fileID: 225364182}
+  UICon: {fileID: 0}
 --- !u!4 &377284225
 Transform:
   m_ObjectHideFlags: 0
@@ -4495,6 +4496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 392ab00963206334f8dad3439d591803, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainLevel: {fileID: 377284223}
   goldenKey: 0
 --- !u!1 &1732638945
 GameObject:
