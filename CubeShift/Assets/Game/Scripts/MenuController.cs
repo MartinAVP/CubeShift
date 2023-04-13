@@ -9,8 +9,10 @@ public class MenuController : MonoBehaviour
     public Button startBut;
     public Button howtoBut;
     public Button quitBut;
+    public Button closeHowTo;
 
-    public Animator anim;
+    public Animator mainAnim;
+    public Animator howToAnim;
     public GameObject canvas;
     public GameObject fading;
     private bool UIMove;
@@ -21,6 +23,7 @@ public class MenuController : MonoBehaviour
         startBut.onClick.AddListener(startGame);
         howtoBut.onClick.AddListener(howtoGame);
         quitBut.onClick.AddListener(quitGame);
+        closeHowTo.onClick.AddListener(closeHow);
 
         //fading.a = 0;
         fading.SetActive(true);
@@ -30,10 +33,14 @@ public class MenuController : MonoBehaviour
         fading.SetActive(false);
     }
 
+    private void closeHow() 
+    {
+        howToAnim.SetTrigger("HowToClose");
+    }
     private void startGame()
     {
         print("The game will start");
-        anim.SetTrigger("start");
+        mainAnim.SetTrigger("start");
         UIMove = true;
 
         fading.SetActive(true);
@@ -52,6 +59,7 @@ public class MenuController : MonoBehaviour
     private void howtoGame()
     {
         print("How to play");
+        howToAnim.SetTrigger("HowToOpen");
     }
     private void quitGame()
     {
