@@ -10,6 +10,8 @@ public class PlayerChar : MonoBehaviour
     public GameObject bulletGrp;
     public GameObject CannonGrp;
     public GameObject Enemies;
+    public GameObject Pills;
+
     public int goldenKey;
     private bool isDead;
 
@@ -59,6 +61,15 @@ public class PlayerChar : MonoBehaviour
         goldKey.gameObject.SetActive(true);
         goldGate.gameObject.SetActive(true);
         goldenKey = 0;
+
+        if (Pills != null)
+        {
+            foreach (Transform child in Pills.transform)
+            {
+                //GameObject.Destroy(child.gameObject);
+                child.gameObject.SetActive(true);
+            }
+        }
 
         //gameObject.transform.localScale = new Vector3(1, 1, 1);
         //gameObject.transform.localScale *= 1f;
