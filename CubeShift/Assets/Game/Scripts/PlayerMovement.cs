@@ -18,9 +18,11 @@ public class PlayerMovement : MonoBehaviour
     private float myAngle;
     private Vector3 spawnPoint;
 
+    private bool canRotate;
     private void Start()
     {
         spawnPoint = transform.position;
+        canRotate = true;
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -35,42 +37,51 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(.2f);
         keyPaused = false;
     }
+    
+    private IEnumerator respawnDelay()
+    {
+        yield return new WaitForSeconds(2f);
+        canRotate = true;
+    }
 
     //Checks for keys the player has pressed
     private void movement()
     {
-        if (Input.GetKey("a"))
+        if (canRotate == true)
         {
-            //Rotates the object to the right over time
-            gameObject.transform.Rotate(0f, 0f, 10f * Time.deltaTime * speed);
-            isSnapped = false;
-        }
-        else if (Input.GetKey("d"))
-        {
-            //Rotates the object to the left over time
-            gameObject.transform.Rotate(0f, 0f, -10f * Time.deltaTime * speed);
-            isSnapped = false;
-        }
-        else if(Input.GetKey("q")) // Snaps the Object and Rotates it Right
-        {
-            if(keyPaused == false)
+            if (Input.GetKey("a"))
             {
-                changeDegree(); // Snaps
-                keyPaused = true; //Prevents infinite rotation
-                gameObject.transform.Rotate(0f, 0f, 0f + rotation); // Rotates
-                StartCoroutine(keyPause());
+                //Rotates the object to the right over time
+                gameObject.transform.Rotate(0f, 0f, 10f * Time.deltaTime * speed);
+                isSnapped = false;
             }
-        }
-        else if(Input.GetKey("e")) // Snaps the Object and Rotates it Left
-        {
-            if(keyPaused == false)
+            else if (Input.GetKey("d"))
             {
-                changeDegree(); // Snaps
-                keyPaused = true; //Prevents infinite rotation
-                gameObject.transform.Rotate(0f, 0f, 0f - rotation); //Rotates
-                StartCoroutine(keyPause());
+                //Rotates the object to the left over time
+                gameObject.transform.Rotate(0f, 0f, -10f * Time.deltaTime * speed);
+                isSnapped = false;
             }
-        }        
+            else if(Input.GetKey("q")) // Snaps the Object and Rotates it Right
+            {
+                if(keyPaused == false)
+                {
+                    changeDegree(); // Snaps
+                    keyPaused = true; //Prevents infinite rotation
+                    gameObject.transform.Rotate(0f, 0f, 0f + rotation); // Rotates
+                    StartCoroutine(keyPause());
+                }
+            }
+            else if(Input.GetKey("e")) // Snaps the Object and Rotates it Left
+            {
+                if(keyPaused == false)
+                {
+                    changeDegree(); // Snaps
+                    keyPaused = true; //Prevents infinite rotation
+                    gameObject.transform.Rotate(0f, 0f, 0f - rotation); //Rotates
+                    StartCoroutine(keyPause());
+                }
+            }        
+        }
     }
 
     //Keeps the the Angle UI Updated
@@ -149,5 +160,7 @@ public class PlayerMovement : MonoBehaviour
     {
         gameObject.transform.position = spawnPoint;
         transform.rotation = Quaternion.Euler(0, 0, 0);
+        canRotate = false;
+        StartCoroutine(respawnDelay());
     }
 }

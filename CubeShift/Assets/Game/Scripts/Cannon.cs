@@ -7,10 +7,12 @@ public class Cannon : MonoBehaviour
 {
     public GameObject player;
     public GameObject bullet_prefab;
+    private bool spawnDelay;
 
     // Start is called before the first frame update
     void Start()
     {
+        spawnDelay = false;
         InvokeRepeating("shoot", 0f, 2f);
     }
 
@@ -20,9 +22,24 @@ public class Cannon : MonoBehaviour
         transform.LookAt(player.transform.position);
     }
 
+    public void dActivation()
+    {
+        StartCoroutine(delayActivation());
+    }
+
+    public IEnumerator delayActivation()
+    {
+        spawnDelay = true;
+        yield return new WaitForSeconds(2f);
+        spawnDelay = false;
+    }
+
     private void shoot()
     {
-        Instantiate(bullet_prefab, GetComponent<Transform>().position,
-            GetComponent<Transform>().rotation); // Attached to pos and rot
+        if (spawnDelay == false)
+        {
+            Instantiate(bullet_prefab, GetComponent<Transform>().position,
+                GetComponent<Transform>().rotation); // Attached to pos and rot
+        }
     }
 }

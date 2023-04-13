@@ -33,6 +33,15 @@ public class UIController : MonoBehaviour
         animatore.SetTrigger("ScreenIn");
         animatore.SetTrigger("ScreenOut");
     }
+    
+    public void LevelComplete()
+    {
+        print("UI Death");
+        levelNumber.text = " ";
+        deathMessage.text = " ";
+        levelDesc.text = " ";
+        animatore.SetTrigger("ScreenIn");
+    }
 
     private void RandomDeath()
     {

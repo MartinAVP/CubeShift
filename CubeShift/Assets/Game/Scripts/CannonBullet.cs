@@ -14,7 +14,7 @@ public class CannonBullet : MonoBehaviour
         StartCoroutine(lifetime());
         cannon = GameObject.FindGameObjectWithTag("Cannon");
         bulletGrp = GameObject.Find("Bullets");
-        //transform.parent = bulletGrp.transform;
+        transform.parent = bulletGrp.transform;
 
         player = GameObject.FindGameObjectWithTag("Player");
         gameObject.transform.GetComponent<Rigidbody>().AddForce((player.transform.position - transform.position) * 50f);

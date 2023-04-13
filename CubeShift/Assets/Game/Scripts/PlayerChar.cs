@@ -7,11 +7,22 @@ public class PlayerChar : MonoBehaviour
 
     private Vector3 spawnPoint;
     public GameObject mainLevel;
+    public GameObject bulletGrp;
+    public GameObject CannonGrp;
+    public GameObject Enemies;
     public int goldenKey;
+    private bool isDead;
+
+    public GameObject goldKey;
+    public GameObject goldGate;
+
+    private Vector3 defaultScale;
     // Start is called before the first frame update
     void Start()
     {
+        defaultScale = new Vector3(0.3f, .3f, .3f);
         spawnPoint = gameObject.transform.position;
+        isDead = false;
     }
 
     // Update is called once per frame
@@ -25,15 +36,44 @@ public class PlayerChar : MonoBehaviour
         yield return new WaitForSeconds(.8f);
         mainLevel.GetComponent<PlayerMovement>().Respawn();
         transform.position = spawnPoint;
+        transform.rotation = Quaternion.Euler(0, 0, 0);
+        isDead = false;
+        foreach (Transform child in bulletGrp.transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
+        
+        foreach (Transform child in Enemies.transform)
+        {
+            //GameObject.Destroy(child.gameObject);
+            child.GetComponentInChildren<CubeEnemy>().respawnEnemy();
+        }
+        //Enemies.GetComponentInChildren<CubeEnemy>().respawnEnemy(); // Resets Enemies
+        transform.localScale = defaultScale;
+        goldKey.gameObject.SetActive(true);
+        goldGate.gameObject.SetActive(true);
+        goldenKey = 0;
+
         //gameObject.transform.localScale = new Vector3(1, 1, 1);
-        gameObject.transform.localScale *= 1f;
+        //gameObject.transform.localScale *= 1f;
 
     }
 
     private void Respawn()
     {
-        mainLevel.GetComponent<UIController>().Death();
-        StartCoroutine("deathDelay");
+        if (isDead == false)
+        {
+            isDead = true;
+            mainLevel.GetComponent<UIController>().Death();
+            CannonGrp.GetComponentInChildren<Cannon>().dActivation();
+            /*
+            foreach (GameObject child in CannonGrp.transform)
+            {
+                child.gameObject.GetComponent<Cannon>().dActivation();
+            }
+            */
+            StartCoroutine("deathDelay");
+        }
     }
 
     private void OnTriggerEnter(Collider other)
