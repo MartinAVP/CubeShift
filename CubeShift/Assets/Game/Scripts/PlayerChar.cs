@@ -38,15 +38,21 @@ public class PlayerChar : MonoBehaviour
         transform.position = spawnPoint;
         transform.rotation = Quaternion.Euler(0, 0, 0);
         isDead = false;
-        foreach (Transform child in bulletGrp.transform)
+        if(bulletGrp != null)
         {
-            GameObject.Destroy(child.gameObject);
+            foreach (Transform child in bulletGrp.transform)
+            {
+                GameObject.Destroy(child.gameObject);
+            }
         }
         
-        foreach (Transform child in Enemies.transform)
+        if(Enemies != null)
         {
-            //GameObject.Destroy(child.gameObject);
-            child.GetComponentInChildren<CubeEnemy>().respawnEnemy();
+            foreach (Transform child in Enemies.transform)
+            {
+                //GameObject.Destroy(child.gameObject);
+                child.GetComponentInChildren<CubeEnemy>().respawnEnemy();
+            }
         }
         //Enemies.GetComponentInChildren<CubeEnemy>().respawnEnemy(); // Resets Enemies
         transform.localScale = defaultScale;
@@ -65,7 +71,10 @@ public class PlayerChar : MonoBehaviour
         {
             isDead = true;
             mainLevel.GetComponent<UIController>().Death();
-            CannonGrp.GetComponentInChildren<Cannon>().dActivation();
+            if(CannonGrp != null)
+            {
+                CannonGrp.GetComponentInChildren<Cannon>().dActivation();
+            }
             /*
             foreach (GameObject child in CannonGrp.transform)
             {
