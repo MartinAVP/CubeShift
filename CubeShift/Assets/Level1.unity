@@ -1947,6 +1947,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 640509552}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &706311067 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 111980741947470244, guid: dffa7e61b885986479737132b77eff78, type: 3}
+  m_PrefabInstance: {fileID: 1917568199}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &706916062
 GameObject:
   m_ObjectHideFlags: 0
@@ -3183,6 +3188,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8875168546922657406, guid: 3a218ab6231afa34a9ecbf0029b7ab60, type: 3}
   m_PrefabInstance: {fileID: 8875168545845013813}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1111085815 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3019190827538499214, guid: fa3c1c18003eeda4bba4024a5f8d3446, type: 3}
+  m_PrefabInstance: {fileID: 1982364037}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1130742012
 GameObject:
   m_ObjectHideFlags: 0
@@ -3737,6 +3747,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4121040239141650088, guid: cfa899492d6e79541812ec1156720696, type: 3}
+      propertyPath: mainLevel
+      value: 
+      objectReference: {fileID: 377284223}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfa899492d6e79541812ec1156720696, type: 3}
 --- !u!4 &1335789828 stripped
@@ -4828,7 +4842,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainLevel: {fileID: 377284223}
+  bulletGrp: {fileID: 0}
+  CannonGrp: {fileID: 0}
+  Enemies: {fileID: 1812015721}
   goldenKey: 0
+  goldKey: {fileID: 706311067}
+  goldGate: {fileID: 1111085815}
 --- !u!1 &1732638945
 GameObject:
   m_ObjectHideFlags: 0
