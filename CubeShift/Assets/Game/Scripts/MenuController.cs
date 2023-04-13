@@ -15,6 +15,7 @@ public class MenuController : MonoBehaviour
     public Animator howToAnim;
     public GameObject canvas;
     public GameObject fading;
+    public GameObject howToPlayContent;
     private bool UIMove;
     private bool fadeOn;
     // Start is called before the first frame update
@@ -31,6 +32,7 @@ public class MenuController : MonoBehaviour
         imgclr.a = 0f;
         fading.GetComponent<RawImage>().color = imgclr;
         fading.SetActive(false);
+        howToPlayContent.SetActive(true);
     }
 
     private void closeHow() 
