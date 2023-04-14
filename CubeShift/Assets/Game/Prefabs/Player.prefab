@@ -112,7 +112,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 8
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &8066627107611477940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,6 +129,7 @@ MonoBehaviour:
   bulletGrp: {fileID: 0}
   CannonGrp: {fileID: 0}
   Enemies: {fileID: 0}
+  Pills: {fileID: 0}
   goldenKey: 0
   goldKey: {fileID: 0}
   goldGate: {fileID: 0}
