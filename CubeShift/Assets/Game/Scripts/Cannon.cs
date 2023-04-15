@@ -9,24 +9,25 @@ public class Cannon : MonoBehaviour
     public GameObject bullet_prefab;
     private bool spawnDelay;
 
-    // Start is called before the first frame update
     void Start()
     {
-        spawnDelay = false;
-        InvokeRepeating("shoot", 0f, 2f);
+        spawnDelay = false; // no spawn delay
+        InvokeRepeating("shoot", 0f, 2f); //Invoke the shoot function every 2 seconds
     }
 
-    // Update is called once per frame
     void Update()
     {
+        // Makes the cannon look at the player at all times.
         transform.LookAt(player.transform.position);
     }
 
+    // Function of public access to start a timer on when the cannon starts shooting
     public void dActivation()
     {
         StartCoroutine(delayActivation());
     }
 
+    // Timer for the cannon to start shooting after starting
     public IEnumerator delayActivation()
     {
         spawnDelay = true;
@@ -34,6 +35,7 @@ public class Cannon : MonoBehaviour
         spawnDelay = false;
     }
 
+    //Will spawn a bullet prefab at the position and rotation of the cannon
     private void shoot()
     {
         if (spawnDelay == false)

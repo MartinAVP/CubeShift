@@ -16,81 +16,47 @@ public class FloatingPlatformMove : MonoBehaviour
     public int speed;
     public bool goingLeft;
 
-    // Start is called before the first frame update
     void Start()
     {
         //leftPos = leftPoint.transform.position;
         //rightPos = rightPoint.transform.position;
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         movement();
-        //Move();
     }
 
     private void movement()
     {
-        if(goingLeft == false) 
+        if(goingLeft == false) // Right or Left Switch
         {
-            if (gameObject.transform.position == leftPoint.transform.position)
+            if (gameObject.transform.position == leftPoint.transform.position) // Checks if the platform is at the left boundary
             {
-                goingLeft = true;
+                goingLeft = true; // Switches and now Goes Right
             }
             else
             {
                 transform.position = Vector3.MoveTowards(transform.position, leftPoint.transform.position, speed * Time.deltaTime);
+                // Moves the platform Towards the Left Boundary position
             }
         }
         else
         {
-            if (gameObject.transform.position == rightPoint.transform.position)
+            if (gameObject.transform.position == rightPoint.transform.position) // Checks if the platform is at the right boundary
             {
-                goingLeft = false;
+                goingLeft = false; // Switches and now Goes Left
             }
             else
             {
                 transform.position = Vector3.MoveTowards(transform.position, rightPoint.transform.position, speed * Time.deltaTime);
+                // Moves the platform Towards the Right Boundary position
             }
         }
     }
 
-    //Make the platform move from one place to the other
-    private void Move()
-    {
-        if (goingLeft == false)
-        {
-            if (transform.position.x == rightPoint.transform.position.x && transform.position.y == rightPoint.transform.position.y)
-            {
-                //Then we are not going left
-                print("leftPoint");
-                goingLeft = true;
-            }
-            else
-            {
-                //Go left instead
-                //transform.position += Vector3.left * Time.deltaTime * speed;
-                transform.position = Vector3.MoveTowards(transform.position, leftPoint.transform.position, speed * Time.deltaTime);
-            }
-        }
-        else
-        {
-            if (transform.position == leftPoint.transform.position)
-            {
-                //Then we're going left
-                goingLeft = false;
-                print("touched position");
-            }
-            else
-            {
-                //Go right instead
-                //transform.position += Vector3.right * Time.deltaTime * speed;
-                transform.position = Vector3.MoveTowards(transform.position, rightPoint.transform.position, speed * Time.deltaTime);
-            }
-        }
-    }
-
+    // GRAVITY PLATFORM TEST
+    /*
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player")
@@ -100,7 +66,6 @@ public class FloatingPlatformMove : MonoBehaviour
         }
     }
 
-    /*
         private void OnCollisionEnter(Collision collision)
         {
             if (collision.gameObject.tag == "Player")

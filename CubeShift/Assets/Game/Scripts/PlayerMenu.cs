@@ -6,23 +6,25 @@ public class PlayerMenu : MonoBehaviour
 {
     public float speed;
     private int rotID;
-    // Start is called before the first frame update
+
     void Start()
     {
+        // Will Start the rotation of the player
         StartCoroutine("newDirection");
     }
 
+    // Recursive Function that will change the direction of the player every 3 seconds
     private IEnumerator newDirection()
     {
-        yield return new WaitForSeconds(3f);
-        rotID = Random.Range(1, 6);
-        StartCoroutine("newDirection");
+        yield return new WaitForSeconds(3f);        // 3 Second Delay
+        rotID = Random.Range(1, 6);                 // Choose a random Number between 1 and 5
+        StartCoroutine("newDirection");             // Call the Function again, making it recursive
     }
 
-    // Update is called once per frame
-    void Update()
+    // Will Change a Number on every frame
+    void FixedUpdate()
     {
-        //gameObject.transform.rotation = Random.rotation;
+        // Switch for the Random Rotation of the Cubes
         switch (rotID)
         {
             case 0:

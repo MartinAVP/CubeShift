@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
         spawnPoint = transform.position;
         canRotate = true;
     }
-    // Update is called once per frame
+
     void FixedUpdate()
     {
         movement();
@@ -38,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
         keyPaused = false;
     }
     
+    // Small delay for Respawning
     private IEnumerator respawnDelay()
     {
         yield return new WaitForSeconds(2f);
@@ -156,6 +157,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    // Function that will respawn the rotation of the level and start a small delay for moving it
     public void Respawn()
     {
         gameObject.transform.position = spawnPoint;

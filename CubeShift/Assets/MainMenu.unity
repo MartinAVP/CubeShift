@@ -1661,9 +1661,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'by Martin Vilches &
-
-    Matthew Banathy'
+  m_Text: 
 --- !u!222 &1438722897
 CanvasRenderer:
   m_ObjectHideFlags: 0
