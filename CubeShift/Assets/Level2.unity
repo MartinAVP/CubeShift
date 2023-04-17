@@ -1479,7 +1479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   introduction: {fileID: 2040282420}
-  LevelN: 1
+  LevelN: 2
   deathMessage: {fileID: 1944153265}
   levelNumber: {fileID: 1018027343}
   levelDesc: {fileID: 1985583479}
