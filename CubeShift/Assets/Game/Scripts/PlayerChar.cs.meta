@@ -3,7 +3,14 @@ guid: 392ab00963206334f8dad3439d591803
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - mainLevel: {instanceID: 0}
+  - bulletGrp: {instanceID: 0}
+  - CannonGrp: {instanceID: 0}
+  - Enemies: {instanceID: 0}
+  - Pills: {instanceID: 0}
+  - goldKey: {instanceID: 0}
+  - goldGate: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

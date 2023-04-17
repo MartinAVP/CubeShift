@@ -1346,7 +1346,7 @@ MonoBehaviour:
   deathMessage: {fileID: 1944153265}
   levelNumber: {fileID: 1018027343}
   levelDesc: {fileID: 1985583479}
-  levelDescription: You're the silver box. Get to the green thing.
+  levelDescription: Get to the green thing.
 --- !u!1 &452733169
 GameObject:
   m_ObjectHideFlags: 0
