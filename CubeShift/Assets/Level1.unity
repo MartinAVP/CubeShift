@@ -1810,11 +1810,6 @@ Transform:
   m_Father: {fileID: 377284225}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &816413674 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8875168546922657407, guid: 3a218ab6231afa34a9ecbf0029b7ab60, type: 3}
-  m_PrefabInstance: {fileID: 760622476}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &816413680 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8875168546922657406, guid: 3a218ab6231afa34a9ecbf0029b7ab60, type: 3}
@@ -5948,11 +5943,11 @@ PrefabInstance:
     - target: {fileID: 8066627107611477940, guid: 0ed6251ff3fce904eb0755e76db7b358, type: 3}
       propertyPath: Pills
       value: 
-      objectReference: {fileID: 793358071}
+      objectReference: {fileID: 0}
     - target: {fileID: 8066627107611477940, guid: 0ed6251ff3fce904eb0755e76db7b358, type: 3}
       propertyPath: Enemies
       value: 
-      objectReference: {fileID: 816413674}
+      objectReference: {fileID: 1812015721}
     - target: {fileID: 8066627107611477940, guid: 0ed6251ff3fce904eb0755e76db7b358, type: 3}
       propertyPath: goldKey
       value: 
@@ -5964,11 +5959,11 @@ PrefabInstance:
     - target: {fileID: 8066627107611477940, guid: 0ed6251ff3fce904eb0755e76db7b358, type: 3}
       propertyPath: CannonGrp
       value: 
-      objectReference: {fileID: 1341791394}
+      objectReference: {fileID: 0}
     - target: {fileID: 8066627107611477940, guid: 0ed6251ff3fce904eb0755e76db7b358, type: 3}
       propertyPath: bulletGrp
       value: 
-      objectReference: {fileID: 30254716}
+      objectReference: {fileID: 0}
     - target: {fileID: 8066627107611477940, guid: 0ed6251ff3fce904eb0755e76db7b358, type: 3}
       propertyPath: mainLevel
       value: 
