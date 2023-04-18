@@ -1679,7 +1679,7 @@ MonoBehaviour:
   deathMessage: {fileID: 1944153265}
   levelNumber: {fileID: 1018027343}
   levelDesc: {fileID: 1985583479}
-  levelDescription: Brain-check
+  levelDescription: Brain-check.
 --- !u!1 &421067764
 GameObject:
   m_ObjectHideFlags: 0
@@ -3504,7 +3504,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 213
+    m_FontSize: 200
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
@@ -6095,10 +6095,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 213
+    m_FontSize: 170
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 214
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -6269,10 +6269,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 65
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 6
     m_MaxSize: 214
     m_Alignment: 1
     m_AlignByGeometry: 0
