@@ -42,6 +42,14 @@ public class UIController : MonoBehaviour
         levelDesc.text = " ";                       // Sets the level description
         animatore.SetTrigger("ScreenIn");           // Triggers the Animation For Screen In
     }
+    
+    public void GameComplete()
+    {
+        levelNumber.text = " ";                     // Sets the level number to nothing
+        deathMessage.text = " ";                    // Sets the Death message to nothing
+        levelDesc.text = "Thanks for Playing";                       // Sets the level description
+        animatore.SetTrigger("ScreenIn");           // Triggers the Animation For Screen In
+    }
 
     private void RandomDeath()                      
     {

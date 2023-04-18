@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class sceneSwitch : MonoBehaviour
 {
     public GameObject mainLevel;
+    public GameObject endLevel;
     public bool islastlevel;
     private int currentLevelID;
 
@@ -28,6 +29,10 @@ public class sceneSwitch : MonoBehaviour
         if (islastlevel == false)   // Will check if the last player bool is enabled
         {
             SceneManager.LoadScene(currentLevelID + 1); // Will load the next scene in the index
+        }
+        else
+        {
+            endLevel.GetComponent<EndScript>().enableEndMenu();
         }
     }
 }
